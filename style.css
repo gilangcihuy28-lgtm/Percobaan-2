@@ -1,0 +1,315 @@
+/* Reset CSS Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --warna-primer: #1e3a8a;    /* Biru Navy Khas Sekolah */
+    --warna-sekunder: #3b82f6;  /* Biru Terang */
+    --warna-aksen: #f59e0b;     /* Kuning Amber */
+    --warna-bg: #f8fafc;
+    --warna-card: #ffffff;
+    --warna-teks: #1e293b;
+    --warna-teks-muda: #64748b;
+    --font-utama: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    font-family: var(--font-utama);
+    background-color: var(--warna-bg);
+    color: var(--warna-teks);
+    line-height: 1.6;
+}
+
+/* Header & Navigasi */
+header {
+    background-color: var(--warna-card);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--warna-primer);
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--warna-sekunder);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--warna-teks);
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--warna-sekunder);
+}
+
+/* Hero Section */
+.hero {
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #1e3a8a, #0f172a);
+    color: #ffffff;
+    border-radius: 20px;
+}
+
+.hero h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 0 auto;
+    opacity: 0.85;
+}
+
+/* Struktur Konten Umum */
+.kategori-section, .katalog-section {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 35px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 45px;
+    height: 4px;
+    background-color: var(--warna-aksen);
+    border-radius: 2px;
+}
+
+/* Grid Kategori */
+.kategori-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.kategori-card {
+    background-color: var(--warna-card);
+    padding: 30px 25px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kategori-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.05);
+    border-color: #cbd5e1;
+}
+
+.kategori-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.kategori-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.kategori-card p {
+    font-size: 0.9rem;
+    color: var(--warna-teks-muda);
+}
+
+/* Grid Buku / Katalog */
+.buku-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.buku-card {
+    background-color: var(--warna-card);
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.buku-cover {
+    height: 180px;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+/* Latar Warna Estetik Untuk Pengganti Cover Gambar Sementara */
+.cover-1 { background-color: #bae6fd; }
+.cover-2 { background-color: #fed7aa; }
+.cover-3 { background-color: #ddd6fe; }
+
+.tag-status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.tag-status.tersedia {
+    background-color: #bbf7d0;
+    color: #166534;
+}
+
+.tag-status.dipinjam {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.buku-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.kategori-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--warna-sekunder);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.buku-judul {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--warna-teks);
+    margin-bottom: 4px;
+}
+
+.buku-penulis {
+    font-size: 0.85rem;
+    color: var(--warna-teks-muda);
+    margin-bottom: 15px;
+}
+
+.buku-penulis span {
+    color: var(--warna-teks);
+    font-weight: 500;
+}
+
+.buku-deskripsi {
+    font-size: 0.9rem;
+    color: #475569;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.buku-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.kode-rak {
+    font-size: 0.85rem;
+    color: var(--warna-teks-muda);
+    font-weight: 500;
+}
+
+.btn-detail {
+    text-decoration: none;
+    color: var(--warna-primer);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--warna-primer);
+    transition: all 0.2s ease;
+}
+
+.btn-detail:hover {
+    color: var(--warna-sekunder);
+    border-color: var(--warna-sekunder);
+}
+
+/* Bagian Kaki (Footer) */
+footer {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 15px;
+}
+
+.kreator-tim span {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.kreator-tim p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #e2e8f0;
+}
+
+/* Responsivitas Layar Ponsel */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav a {
+        margin: 0 10px;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
